@@ -1,0 +1,28 @@
+{
+  "name": "@wont/lint",
+  "version": "1.0.0",
+  "description": "rules for project",
+  "main": "index.js",
+  "bin": {
+    "lt": "./scripts/commitLint.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wont-org/liner.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wont-org/liner/issues"
+  },
+  "homepage": "https://github.com/wont-org/liner#readme",
+  "dependencies": {
+    "commitizen": "^4.2.2",
+    "cz-conventional-changelog": "^3.3.0"
+  },
+  "devDependencies": {}
+}
