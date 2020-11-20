@@ -2,27 +2,63 @@
   "name": "@wont/lint",
   "version": "1.0.0",
   "description": "rules for project",
-  "main": "index.js",
+  "main": "./lib/commands/index.js",
   "bin": {
-    "lt": "./scripts/commitLint.js"
+    "lint": "./lib/commands/index.js"
   },
   "scripts": {
+    "prelink": "tsc",
+    "link": "npm link",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wont-org/liner.git"
   },
+  "files": [
+    "lib",
+    "template"
+  ],
   "keywords": [],
   "author": "",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/wont-org/liner/issues"
   },
+  "publishConfig": {
+    "access": "public"
+  },
+  "lint-staged": {
+    "*.{jsx,js,tsx,ts,md,mdx}": [
+      "prettier --write"
+    ],
+    "*.{jsx,js,tsx,ts}": [
+      "eslint --cache --fix"
+    ]
+  },
   "homepage": "https://github.com/wont-org/liner#readme",
   "dependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
     "commitizen": "^4.2.2",
-    "cz-conventional-changelog": "^3.3.0"
+    "cz-conventional-changelog": "^3.3.0",
+    "@types/node": "^14.14.9",
+    "chalk": "^4.1.0",
+    "commander": "^6.2.0",
+    "fs-extra": "^9.0.1",
+    "inquirer": "^7.3.3",
+    "typescript": "^4.1.2"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.8.1",
+    "@typescript-eslint/parser": "^4.8.1",
+    "eslint": "^7.13.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.5.1",
+    "prettier": "^2.2.0"
+  }
 }
